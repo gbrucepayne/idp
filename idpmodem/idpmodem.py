@@ -102,13 +102,17 @@ class Modem(object):
         'Air 4g': 8
     }
     
-    def __init__(self, serial_port, log=None, debug=False):
+    def __init__(self, serial_port, log=None, debug=False, **kwargs):
         """
         Initializes attributes and pointers used by Modem class methods.
 
         :param serial_port: a pySerial.serial object
         :param log: an optional logger
         :param debug: Boolean option for verbose trace
+        :param kwargs:
+
+           * callbacks for events, reset_request, pulse_per_second
+           * interrupts from digital inputs
 
         """
         self.mobile_id = 'unknown'
